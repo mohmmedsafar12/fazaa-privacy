@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فزعة - سياسة الخصوصية | FAZAA - Privacy Policy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00ff88;
+            --bg: #0a0a0a;
+            --card: #151515;
+            --text: #e0e0e0;
+            --secondary: #222;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            transition: all 0.3s ease;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a1a, #000);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+            box-shadow: 0 5px 25px rgba(0, 255, 136, 0.2);
+        }
+
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: var(--primary);
+            color: black;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,255,136,0.4);
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 35px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border-right: 6px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        h1 { color: var(--primary); margin: 0; font-size: 2.8em; text-shadow: 0 0 15px rgba(0,255,136,0.3); }
+        h2 { color: var(--primary); border-bottom: 1px solid var(--secondary); padding-bottom: 15px; margin-top: 0; }
+
+        /* منطقة الباركود الذكية */
+        .qr-section {
+            background: linear-gradient(145deg, #1a1a1a, #111);
+            border: 1px solid var(--primary);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .qr-box {
+            background: white;
+            padding: 15px;
+            display: inline-block;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 0 20px rgba(255,255,255,0.1);
+        }
+
+        .qr-box img { width: 160px; height: 160px; display: block; }
+
+        .benefit-tag {
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 60px;
+            color: #777;
+            border-top: 1px solid var(--secondary);
+            font-size: 0.95em;
+        }
+
+        /* نظام التبديل بين اللغات */
+        .ar-content { display: block; }
+        .en-content { display: none; }
+
+        .en-mode { direction: ltr; font-family: 'Roboto', sans-serif; }
+        .en-mode .ar-content { display: none; }
+        .en-mode .en-content { display: block; }
+        .en-mode .card { border-right: none; border-left: 6px solid var(--primary); }
+        .en-mode .lang-switch { left: auto; right: 20px; }
+    </style>
+</head>
+<body id="pageBody">
+
+<button class="lang-switch" onclick="toggleLang()" id="btnSwitch">English Version</button>
+
+<header>
+    <div class="ar-content">
+        <h1>تطبيق فزعة - FAZAA</h1>
+        <p>مهمتنا حمايتك.. وخصوصيتك خط أحمر</p>
+    </div>
+    <div class="en-content">
+        <h1>FAZAA Application</h1>
+        <p>Our mission is your safety.. and privacy is a red line</p>
+    </div>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2 class="ar-content">1. حماية البيانات (أوفلاين)</h2>
+        <h2 class="en-content">1. Data Protection (Offline)</h2>
+        <p class="ar-content">تطبيق "فزعة" مصمم ليعمل بدون إنترنت تماماً. لا نقوم برفع إحداثيات موقعك أو سجل تحركاتك إلى أي خادم (Server). كل شيء يبقى داخل جهازك الخاص.</p>
+        <p class="en-content">FAZAA is designed to work completely offline. We do not upload your coordinates or movement history to any server. Everything stays within your private device.</p>
+    </div>
+
+    <div class="card">
+        <h2 class="ar-content">2. الصلاحيات التقنية</h2>
+        <h2 class="en-content">2. Technical Permissions</h2>
+        <p class="ar-content">نطلب الوصول للموقع (GPS) فقط لتشغيل الرادار والخرائط، وصلاحية الكاميرا فقط لتشغيل وميض SOS. لا نصل لصورك أو جهات اتصالك أبداً.</p>
+        <p class="en-content">We request Location (GPS) only for the radar and maps, and Camera permission only for the SOS flash. We never access your photos or contacts.</p>
+    </div>
+
+    <div class="qr-section">
+        <div class="ar-content">
+            <span class="benefit-tag">لماذا نستخدم تقنية الباركود؟</span>
+            <p><strong>الفائدة الأساسية:</strong> في "فزعة"، الباركود هو وسيلتك لنقل موقعك <strong>بدون إنترنت</strong>. عندما تطلب المساعدة، يتم تحويل إحداثياتك لكود QR، ليتمكن المنقذ من مسحه فوراً ومعرفة مكانك بدقة، مما يختصر وقت الوصول إليك في المناطق المنعزلة.</p>
+        </div>
+        <div class="en-content">
+            <span class="benefit-tag">Why do we use QR technology?</span>
+            <p><strong>Primary Benefit:</strong> In FAZAA, the QR code is your tool to transfer your location <strong>without internet</strong>. When you need help, your coordinates are converted into a QR code, allowing rescuers to scan it instantly and know your exact location, saving time in remote areas.</p>
+        </div>
+
+        <div class="qr-box">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=FAZAA_OFFLINE_RESCUE" alt="Offline SOS QR">
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p class="ar-content">جميع الحقوق محفوظة &copy; 2026 تطبيق فزعة - تطوير المهندس محمد البقمي</p>
+    <p class="en-content">All Rights Reserved &copy; 2026 FAZAA App - Developed by Eng. Mohammed Albaqmi</p>
+</div>
+
+<script>
+    function toggleLang() {
+        const body = document.getElementById('pageBody');
+        const btn = document.getElementById('btnSwitch');
+        
+        body.classList.toggle('en-mode');
+        
+        if (body.classList.contains('en-mode')) {
+            btn.textContent = 'النسخة العربية';
+        } else {
+            btn.textContent = 'English Version';
+        }
+    }
+</script>
+
+</body>
+</html>
