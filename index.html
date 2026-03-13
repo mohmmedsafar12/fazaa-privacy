@@ -8,15 +8,19 @@
     <style>
         :root {
             --primary: #00ff88;
-            --bg: #0a0a0a;
-            --card: #151515;
+            --bg: #050505;
+            --card: #111111;
             --text: #e0e0e0;
-            --secondary: #222;
+            --secondary: #1a1a1a;
+            --accent: rgba(0, 255, 136, 0.15);
         }
 
         body {
             font-family: 'Tajawal', sans-serif;
             background-color: var(--bg);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 255, 136, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 255, 136, 0.03) 0%, transparent 20%);
             color: var(--text);
             margin: 0;
             padding: 0;
@@ -25,73 +29,78 @@
         }
 
         header {
-            background: linear-gradient(135deg, #1a1a1a, #000);
-            padding: 60px 20px;
+            background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+            padding: 80px 20px;
             text-align: center;
-            border-bottom: 3px solid var(--primary);
-            box-shadow: 0 5px 25px rgba(0, 255, 136, 0.2);
+            border-bottom: 2px solid var(--primary);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
         }
 
         .lang-switch {
             position: fixed;
-            top: 20px;
-            left: 20px;
+            top: 25px;
+            left: 25px;
             background: var(--primary);
             color: black;
             border: none;
-            padding: 12px 25px;
-            border-radius: 30px;
+            padding: 10px 22px;
+            border-radius: 50px;
             cursor: pointer;
-            font-weight: bold;
+            font-weight: 700;
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,255,136,0.4);
+            box-shadow: 0 4px 20px rgba(0,255,136,0.3);
             font-family: 'Tajawal', sans-serif;
+            transition: transform 0.2s;
         }
 
+        .lang-switch:hover { transform: scale(1.05); }
+
         .container {
-            max-width: 850px;
-            margin: 40px auto;
+            max-width: 800px;
+            margin: 50px auto;
             padding: 0 20px;
         }
 
         .card {
             background: var(--card);
-            padding: 35px;
-            border-radius: 20px;
-            margin-bottom: 30px;
-            border-right: 6px solid var(--primary);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            padding: 40px;
+            border-radius: 24px;
+            margin-bottom: 35px;
+            border: 1px solid var(--secondary);
+            border-right: 5px solid var(--primary);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            transition: translateY 0.3s;
         }
 
-        h1 { color: var(--primary); margin: 0; font-size: 2.8em; text-shadow: 0 0 15px rgba(0,255,136,0.3); }
-        h2 { color: var(--primary); border-bottom: 1px solid var(--secondary); padding-bottom: 15px; margin-top: 0; }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary); }
 
-        /* منطقة الباركود الذكية */
+        h1 { color: var(--primary); margin: 0; font-size: 3em; letter-spacing: -1px; }
+        h2 { color: var(--primary); font-size: 1.6em; margin-bottom: 20px; display: flex; align-items: center; }
+        
         .qr-section {
-            background: linear-gradient(145deg, #1a1a1a, #111);
-            border: 1px solid var(--primary);
-            border-radius: 20px;
-            padding: 30px;
+            background: var(--card);
+            border: 1px dashed var(--primary);
+            border-radius: 24px;
+            padding: 40px;
             text-align: center;
-            margin-top: 40px;
+            margin-top: 50px;
         }
 
         .qr-box {
             background: white;
             padding: 15px;
             display: inline-block;
-            border-radius: 15px;
-            margin: 20px 0;
-            box-shadow: 0 0 20px rgba(255,255,255,0.1);
+            border-radius: 20px;
+            margin: 25px 0;
         }
 
         .qr-box img { width: 160px; height: 160px; display: block; }
 
         .benefit-tag {
-            background: rgba(0, 255, 136, 0.1);
+            background: var(--accent);
             color: var(--primary);
-            padding: 5px 15px;
-            border-radius: 10px;
+            padding: 6px 18px;
+            border-radius: 12px;
             font-weight: bold;
             display: inline-block;
             margin-bottom: 15px;
@@ -99,21 +108,22 @@
 
         .footer {
             text-align: center;
-            padding: 60px;
-            color: #777;
-            border-top: 1px solid var(--secondary);
-            font-size: 0.95em;
+            padding: 80px 20px;
+            background: #000;
+            color: #666;
+            margin-top: 100px;
         }
 
-        /* نظام التبديل بين اللغات */
+        .email-link { color: var(--primary); text-decoration: none; font-weight: bold; }
+
         .ar-content { display: block; }
         .en-content { display: none; }
 
         .en-mode { direction: ltr; font-family: 'Roboto', sans-serif; }
         .en-mode .ar-content { display: none; }
         .en-mode .en-content { display: block; }
-        .en-mode .card { border-right: none; border-left: 6px solid var(--primary); }
-        .en-mode .lang-switch { left: auto; right: 20px; }
+        .en-mode .card { border-right: 1px solid var(--secondary); border-left: 5px solid var(--primary); }
+        .en-mode .lang-switch { left: auto; right: 25px; }
     </style>
 </head>
 <body id="pageBody">
@@ -123,11 +133,11 @@
 <header>
     <div class="ar-content">
         <h1>تطبيق فزعة - FAZAA</h1>
-        <p>مهمتنا حمايتك.. وخصوصيتك خط أحمر</p>
+        <p>خصوصيتك وأمانك.. أولويتنا القصوى في الصحراء</p>
     </div>
     <div class="en-content">
-        <h1>FAZAA Application</h1>
-        <p>Our mission is your safety.. and privacy is a red line</p>
+        <h1>FAZAA App</h1>
+        <p>Your privacy and safety.. our top priority in the desert</p>
     </div>
 </header>
 
@@ -140,20 +150,48 @@
     </div>
 
     <div class="card">
-        <h2 class="ar-content">2. الصلاحيات التقنية</h2>
-        <h2 class="en-content">2. Technical Permissions</h2>
+        <h2 class="ar-content">2. جمع البيانات الشخصية</h2>
+        <h2 class="en-content">2. Personal Data Collection</h2>
+        <p class="ar-content"><strong>نحن لا نجمع أي بيانات شخصية</strong> (مثل الاسم، البريد الإلكتروني، أو رقم الهاتف) بشكل تلقائي أو قسري. التطبيق لا يتطلب إنشاء حساب لاستخدامه، مما يضمن سرية هويتك بالكامل.</p>
+        <p class="en-content"><strong>We do not collect any personal data</strong> (such as name, email, or phone number) automatically. The app does not require account creation, ensuring your complete anonymity.</p>
+    </div>
+
+    <div class="card">
+        <h2 class="ar-content">3. الصلاحيات التقنية</h2>
+        <h2 class="en-content">3. Technical Permissions</h2>
         <p class="ar-content">نطلب الوصول للموقع (GPS) فقط لتشغيل الرادار والخرائط، وصلاحية الكاميرا فقط لتشغيل وميض SOS. لا نصل لصورك أو جهات اتصالك أبداً.</p>
-        <p class="en-content">We request Location (GPS) only for the radar and maps, and Camera permission only for the SOS flash. We never access your photos or contacts.</p>
+        <p class="en-content">We request Location (GPS) only for radar and maps, and Camera permission only for the SOS flash. We never access your photos or contacts.</p>
+    </div>
+
+    <div class="card">
+        <h2 class="ar-content">4. خصوصية الأطفال</h2>
+        <h2 class="en-content">4. Children's Privacy</h2>
+        <p class="ar-content">هذا التطبيق لا يستهدف الأطفال دون سن 13 عاماً. نحن لا نجمع أي معلومات من الأطفال، والتطبيق آمن تماماً للاستخدام من قبل جميع الفئات العمرية كأداة إنقاذ.</p>
+        <p class="en-content">This app is not directed to children under 13. We do not collect any information from children, and the app is completely safe for all ages as a rescue tool.</p>
+    </div>
+
+    <div class="card">
+        <h2 class="ar-content">5. التغييرات في السياسة</h2>
+        <h2 class="en-content">5. Changes to This Policy</h2>
+        <p class="ar-content">نحتفظ بالحق في تحديث سياسة الخصوصية هذه لتعكس أي تحسينات في التطبيق. سنقوم بإشعاركم بأي تغييرات جوهرية عبر تحديث هذه الصفحة داخل التطبيق.</p>
+        <p class="en-content">We reserve the right to update this policy to reflect app improvements. We will notify you of any major changes by updating this page within the app.</p>
+    </div>
+
+    <div class="card">
+        <h2 class="ar-content">6. تواصل معنا</h2>
+        <h2 class="en-content">6. Contact Us</h2>
+        <p class="ar-content">إذا كان لديك أي سؤال حول الخصوصية، يمكنك التواصل مع المطور المهندس محمد البقمي عبر البريد الإلكتروني: <br> <a href="mailto:support@fazaa.com" class="email-link">support@fazaa.com</a></p>
+        <p class="en-content">If you have any questions about privacy, you can contact the developer Eng. Mohammed Albaqmi via email: <br> <a href="mailto:support@fazaa.com" class="email-link">support@fazaa.com</a></p>
     </div>
 
     <div class="qr-section">
         <div class="ar-content">
             <span class="benefit-tag">لماذا نستخدم تقنية الباركود؟</span>
-            <p><strong>الفائدة الأساسية:</strong> في "فزعة"، الباركود هو وسيلتك لنقل موقعك <strong>بدون إنترنت</strong>. عندما تطلب المساعدة، يتم تحويل إحداثياتك لكود QR، ليتمكن المنقذ من مسحه فوراً ومعرفة مكانك بدقة، مما يختصر وقت الوصول إليك في المناطق المنعزلة.</p>
+            <p><strong>الفائدة الأساسية:</strong> الباركود هو وسيلتك لنقل موقعك <strong>بدون إنترنت</strong>. عندما تطلب المساعدة، يتم تحويل إحداثياتك لكود QR، ليتمكن المنقذ من مسحه ومعرفة مكانك بدقة.</p>
         </div>
         <div class="en-content">
-            <span class="benefit-tag">Why do we use QR technology?</span>
-            <p><strong>Primary Benefit:</strong> In FAZAA, the QR code is your tool to transfer your location <strong>without internet</strong>. When you need help, your coordinates are converted into a QR code, allowing rescuers to scan it instantly and know your exact location, saving time in remote areas.</p>
+            <span class="benefit-tag">Why use QR technology?</span>
+            <p><strong>Primary Benefit:</strong> QR is your tool to transfer location <strong>without internet</strong>. When you need help, your coordinates become a QR code for rescuers to scan instantly.</p>
         </div>
 
         <div class="qr-box">
@@ -171,9 +209,7 @@
     function toggleLang() {
         const body = document.getElementById('pageBody');
         const btn = document.getElementById('btnSwitch');
-        
         body.classList.toggle('en-mode');
-        
         if (body.classList.contains('en-mode')) {
             btn.textContent = 'النسخة العربية';
         } else {
